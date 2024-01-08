@@ -13,6 +13,9 @@
     $hasil = mysqli_fetch_all($query, MYSQLI_ASSOC); 
     ?>
     <form action="editdata.php" method="post" style="display:flex; flex-direction:column; max-width: 50vw;">
+    <div><a href="list.php">
+        Kembali
+    </a></div>
         <input type="hidden" name="id" value="<?php echo $hasil[0]['id']?>">
         <label>Nama</label>
         <input type="text" name="nama" value="<?php echo $hasil[0]['nama']?>">

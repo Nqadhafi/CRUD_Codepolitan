@@ -7,7 +7,10 @@
 </head>
 <body>
     <form action="tambahdata.php" method="post" style="display:flex; flex-direction:column; max-width: 50vw;">
-        <label>Nama</label>
+    <div><a href="list.php">
+        Kembali
+    </a></div>    
+    <label>Nama</label>
         <input type="text" name="nama">
         <label for="alamat">Alamat</label>
         <textarea name="alamat" id="" cols="30" rows="10"></textarea>
