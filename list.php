@@ -35,7 +35,7 @@ $hasil = mysqli_fetch_all($query, MYSQLI_ASSOC);
                     <td><?php echo $hasil['jenis_kelamin'];?></td>
                     <td>
                         <a href="edit.php?id=<?php echo $hasil['id']?>">Ubah</a>
-                        <a href="delete.php?id=<?php echo $hasil['id']?>" style="background-color: red; color: white;">Hapus</a>
+                        <a href="delete.php?id=<?php echo $hasil['id']?>" onclick="if(!confirm('Apakah Anda Yakin Menghapus Data Ini?')){return false;}" style="background-color: red; color: white;">Hapus</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
