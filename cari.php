@@ -1,8 +1,11 @@
 <?php
 
 include('koneksi.php');
-$query = mysqli_query($koneksi,'SELECT * FROM karyawan');
+$kata_kunci = $_GET['katakunci'];
+
+$query = mysqli_query($koneksi,"SELECT * FROM karyawan WHERE nama='$kata_kunci'");
 $hasil = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -18,12 +21,25 @@ $hasil = mysqli_fetch_all($query, MYSQLI_ASSOC);
             <br>
             <button>Tambah Data</button>
         </a>
+        <a href="list.php">
+            <br>
+            <button>Kembali</button>
+        </a>
+        
         <br>
         <br>
         <form action="cari.php" method="get">
-            <input type="text" name="katakunci" placeholder="masukkan kata kunci">
+            <input type="text" name="katakunci" placeholder="masukkan kata kunci" value="<?php echo $_GET['katakunci']?>">
             <button type="submit"> Cari Data</button>
         </form>
+        <?php   
+        if($query){
+            echo "Data berhasil ditemukan.";
+        }
+        else {
+            echo "Tidak ada data terkait";
+        }
+        ?>
         <br>
     </div>
     
