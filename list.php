@@ -34,7 +34,8 @@ $hasil = mysqli_fetch_all($query, MYSQLI_ASSOC);
                     <td><?php echo $hasil['usia'];?></td>
                     <td><?php echo $hasil['jenis_kelamin'];?></td>
                     <td>
-                        <a href="edit.php?id=<?php echo $hasil['id']?>">Edit Data</a>
+                        <a href="edit.php?id=<?php echo $hasil['id']?>">Ubah</a>
+                        <a href="delete.php?id=<?php echo $hasil['id']?>" style="background-color: red; color: white;">Hapus</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
